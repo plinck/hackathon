@@ -66,8 +66,8 @@ type Props = WithStyles<typeof styles>;
             const getSpot = firebase.functions.httpsCallable('getSpot');
             getSpot().then((res:any) => {
                 // Read result of the Cloud Function.
-                console.log(` res: ${res}`);    
-                setResults(res);
+                console.log(` res: ${res.data}`);    
+                setResults(res.data);
             }).catch((err: Error) => {
                 console.error(`${err}`);
                 setResults(err.message);
@@ -82,8 +82,8 @@ type Props = WithStyles<typeof styles>;
             const moveSpot = firebase.functions.httpsCallable('moveSpot');
             moveSpot(request).then((res:any) => {
                 // Read result of the Cloud Function.
-                console.log(` res: ${res}`);  
-                setResults(res);  
+                console.log(` res: ${res.data}`);  
+                setResults(res.data);  
             }).catch((err: Error) => {
                 console.error(`${err}`);
                 setResults(err.message);

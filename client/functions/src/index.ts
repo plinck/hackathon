@@ -15,7 +15,7 @@ exports.getSpot = functions.https.onCall((req:any, context:any):any => {
         
         axios.get(URIRequest, {}).then((res) => {
             console.log(`Success retrieving data`);
-            resolve(res);
+            resolve(res.data);
         }).catch((err: Error) => {
             console.error(err);
             reject(err);
@@ -34,7 +34,7 @@ exports.moveSpot = functions.https.onCall((req:any, context:any):any => {
         
         axios.put(URIRequest, move).then((res) => {
             console.log(`Success retrieving data`);
-            resolve(res);
+            resolve(res.data);
         }).catch((err: Error) => {
             console.error(err);
             reject(err);
