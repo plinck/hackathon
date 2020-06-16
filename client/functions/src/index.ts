@@ -14,7 +14,7 @@ exports.getSpot = functions.https.onCall((req:any, context:any):any => {
         const URIRequest = "HTTP://EC2-3-16-22-54.US-EAST-2.COMPUTE.AMAZONAWS.COM/VirtualControl/Rooms/HACKATHON13/cws/hackathon/maze/UUUPJ/navigate";
         
         axios.get(URIRequest, {}).then((res) => {
-            console.log(`Success retrieving data: ${res}`);
+            console.log(`Success retrieving data`);
             resolve(res);
         }).catch((err: Error) => {
             console.error(err);
@@ -33,7 +33,7 @@ exports.moveSpot = functions.https.onCall((req:any, context:any):any => {
         const URIRequest = "HTTP://EC2-3-16-22-54.US-EAST-2.COMPUTE.AMAZONAWS.COM/VirtualControl/Rooms/HACKATHON13/cws/hackathon/maze/UUUPJ/navigate";
         
         axios.put(URIRequest, move).then((res) => {
-            console.log(`Success retrieving data: ${res}`);
+            console.log(`Success retrieving data`);
             resolve(res);
         }).catch((err: Error) => {
             console.error(err);
